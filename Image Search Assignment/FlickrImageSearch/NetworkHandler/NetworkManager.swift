@@ -31,7 +31,7 @@ class NetworkManager: NSObject {
                 return completion(.Failure(error?.localizedDescription ?? NetworkManager.errorMessage))
             }
             
-            guard let stringResponse = String(data: data, encoding: String.Encoding.utf8) else {
+            guard String(data: data, encoding: String.Encoding.utf8) != nil else {
                 return completion(.Failure(error?.localizedDescription ?? NetworkManager.errorMessage))
             }
             
